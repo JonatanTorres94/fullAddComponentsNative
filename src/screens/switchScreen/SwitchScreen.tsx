@@ -12,10 +12,11 @@ export const SwitchScreen = () => {
 
     const [state, setState] = useState({
         isActive: true,
-        isHungry: false
+        isHungry: false,
+        isXeneixe: true
     });
 
-    const {isActive, isHungry} = state
+    const { isActive, isHungry, isXeneixe } = state
 
     const onChange = (value: boolean, field: string) => {
         setState({
@@ -45,17 +46,43 @@ export const SwitchScreen = () => {
 
             <HeaderText title='Switch Component' />
 
-            <View style={styles.container}>
-                <Text style={styles.jsonText}> { isActive ? 'Is Active: True' : 'Is Active: False' } </Text>
-                <CustomSwitch isOn={isActive} onChange={(value) => onChange(value, 'isActive')} />
-               
-                <Icon
-                    name='shield-checkmark'
-                    size={50}
-                    color= { (isActive) ? colors.true : colors.alert}
-                />
-            
+            <View style={{ flexDirection: 'column', flex: 1 }}>
+                <View style={styles.container}>
+                    <Text style={styles.jsonText}> {isActive ? 'Is Active: True' : 'Is Active: False'} </Text>
+                    <CustomSwitch isOn={isActive} onChange={(value) => onChange(value, 'isActive')} />
+
+                    <Icon
+                        name='shield-checkmark'
+                        size={50}
+                        color={(isActive) ? colors.true : colors.alert}
+                    />
+                </View>
+
+                <View style={styles.container}>
+                    <Text style={styles.jsonText}> {isHungry ? 'Is Hungry: True' : 'Is Hungry: False'} </Text>
+                    <CustomSwitch isOn={isHungry} onChange={(value) => onChange(value, 'isHungry')} />
+
+                    <Icon
+                        name='shield-checkmark'
+                        size={50}
+                        color={(isHungry) ? colors.true : colors.alert}
+                    />
+                </View>
+
+                <View style={styles.container}>
+                    <Text style={styles.jsonText}> {isXeneixe ? 'Is Xeneixe: True' : 'Is Xeneixe: False'} </Text>
+                    <CustomSwitch isOn={isXeneixe} onChange={(value) => onChange(value, 'isXeneixe')} />
+
+                    <Icon
+                        name='shield'
+                        size={50}
+                        color={(isXeneixe) ? colors.blueLe : colors.yellowLe}
+                    />
+                </View>
+
             </View>
+
+
 
         </View>
     );
@@ -63,14 +90,13 @@ export const SwitchScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         marginHorizontal: 50,
+        marginTop: 25,
         justifyContent: 'space-between',
-        marginBottom: 500
     },
-    jsonText:{
+    jsonText: {
         color: colors.fourth,
         fontSize: 20
     }

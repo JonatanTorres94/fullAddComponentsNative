@@ -5,6 +5,13 @@ import { HomeScreen } from '../screens/homeScreen/HomeScreen';
 import { Animation102 } from '../screens/animations/Animation102';
 import { Animation101 } from '../screens/animations/Animation101';
 import { SwitchScreen } from '../screens/switchScreen/SwitchScreen';
+import { AlertScreen } from '../screens/alertScreen/AlertScreen';
+import ModalScreen from '../screens/modalScreen/ModalScreen';
+import { TextInputScreen } from '../screens/textInputScreen/TextInputScreen';
+import { PullToRefreshScreen } from '../screens/pullToRefreshScreen/PullToRefreshScreen';
+import {  SectionListScreen } from '../screens/sectionList/SectionListScreen';
+import { InfiniteScrollScreen } from '../screens/infiniteScrollScreen/InfiniteScrollScreen';
+import { SlidesScreen } from '../screens/slidesScreen/SlidesScreen';
 
 export type RootStackParams = {
   Splash: undefined,
@@ -12,6 +19,13 @@ export type RootStackParams = {
   Animation101: undefined,
   Animation102: undefined,
   SwitchScreen: undefined,
+  AlertScreen: undefined,
+  ModalScreen: undefined,
+  TextInputScreen: undefined,
+  PullToRefresh: undefined,
+  SectionList: undefined,
+  InfiniteScrollScreen: undefined,
+  SlidesScreen: undefined
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -30,6 +44,13 @@ export const StackNavigation = () => {
       <Stack.Screen name='Animation101' component={Animation101} />
       <Stack.Screen name='Animation102' component={Animation102} />
       <Stack.Screen name='SwitchScreen' component={SwitchScreen} /> 
+      <Stack.Screen name='AlertScreen' component={AlertScreen}/>
+      <Stack.Screen name='ModalScreen' component={ModalScreen} />
+      <Stack.Screen name='TextInputScreen' component={TextInputScreen} />
+      <Stack.Screen name='PullToRefresh' component={PullToRefreshScreen}/>
+      <Stack.Screen name='SectionList' component={SectionListScreen} />
+      <Stack.Screen name='InfiniteScrollScreen' component={InfiniteScrollScreen} />
+      <Stack.Screen name='SlidesScreen' component={SlidesScreen} />
     </Stack.Navigator>
   );
 }
