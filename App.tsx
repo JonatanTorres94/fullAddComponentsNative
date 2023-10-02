@@ -1,22 +1,30 @@
 
-import { NavigationContainer } from '@react-navigation/native';
-import React from 'react';
+import React, { Children } from 'react';
 import { StackNavigation } from './src/navigate/StackNavigation';
-import { HomeScreen } from './src/screens/homeScreen/HomeScreen';
 
 import 'react-native-gesture-handler';
+import { ThemeProvider } from './src/context/themeContext/ThemeContext';
 
 
 const App = () => {
 
 
   return (
-    <NavigationContainer>
-      <StackNavigation/>
-    </NavigationContainer>
+    <AppState>
+        <StackNavigation />
+    </AppState>
+
   )
 }
 
+const AppState = ({ children }: any) => {
+
+  return (
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
+  )
+}
 
 
 export default App;

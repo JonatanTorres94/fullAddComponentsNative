@@ -51,4 +51,9 @@ export const menuItems: MenuItem[] = [
         icon: 'albums-outline',
         component: 'SlidesScreen'
     },
+    {
+        name: 'Config Screen',
+        icon: 'construct-outline',
+        component: 'ConfigScreen'
+    },
 ]

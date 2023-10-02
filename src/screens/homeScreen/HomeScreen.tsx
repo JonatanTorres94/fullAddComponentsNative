@@ -29,7 +29,7 @@ export const HomeScreen = () => {
 
 
     return (
-        <View style={{ flex: 1, backgroundColor: colors.major }}>
+        <View style={{ flex: 1}}>
 
 
 
